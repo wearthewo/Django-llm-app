@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+<h3 class="text-center mt-5">Groq LangChain</h3>
+<form action="{% url 'langchain' %}" method="POST">
+  {% csrf_token %} {{form | crispy }}
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea class="form-control" rows="5" id="description"></textarea>
+  </div>
+  <button type="submit" type="button" class="btn btn-primary btn-sm btn-block">
+    Submit
+  </button>
+</form>
+
+{% endblock content %}
